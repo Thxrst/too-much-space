@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.5283019, g: 0.012459949, b: 0.46541655, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.42
+  orthographic size: 5.3122554
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -212,15 +212,27 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 997978436923986864}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7896282895840617328, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
       propertyPath: m_Name
       value: Objective
       objectReference: {fileID: 0}
+    - target: {fileID: 7896282895840617332, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
+      propertyPath: lengthInSec
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7896282895840617335, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896282895840617335, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.086191
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896282895840617335, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.086191
       objectReference: {fileID: 0}
     - target: {fileID: 7896282895840617335, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,11 +276,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
---- !u!4 &2130640638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7896282895840617335, guid: bdfc3ce8443d74fe1b87aa19caac2ce3, type: 3}
-  m_PrefabInstance: {fileID: 1355921635}
-  m_PrefabAsset: {fileID: 0}
 --- !u!483693784 &997978435875736402
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1536,8 +1543,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 997978435875736414}
-  - {fileID: 2130640638}
-  - {fileID: 997978437223186366}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1663,8 +1668,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4373548430113093438}
-  m_Father: {fileID: 997978436923986864}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4373548430113093437
 GameObject:
