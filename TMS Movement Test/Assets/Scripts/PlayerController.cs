@@ -68,12 +68,13 @@ public class PlayerController : MonoBehaviour
             nextAction = 0;
         }
 
-        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, Ground);
+        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, Ground); // boolcheck for grounded
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(lrValue * (100 * spd) * Time.deltaTime, rb.velocity.y);
     }
+
 
 }
