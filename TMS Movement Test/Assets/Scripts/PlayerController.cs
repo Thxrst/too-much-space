@@ -7,20 +7,16 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField] float spd;
     [SerializeField] float thrust;
-    [SerializeField] LayerMask Ground;
-    private int lrValue;
+    int lrValue;
     //string nextAction = "left";
-    private int nextAction = 0;
-    private bool pressSpace;
-    private bool hasJump = true;
-    private BoxCollider2D coll;
-
+    int nextAction = 0;
+    bool pressSpace;
+    bool hasJump = true;
     // float [] nextAction = {"left","jump1","right","jump2"};
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
         nextAction = 0;
     }
 
@@ -67,13 +63,19 @@ public class PlayerController : MonoBehaviour
         {
             nextAction = 0;
         }
-
-        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, Ground);
     }
 
     void FixedUpdate()
     {
         rb.velocity = new Vector2(lrValue * (100 * spd) * Time.deltaTime, rb.velocity.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Surface")
+        {
+            hasJump = true;
+        }
     }
 
 }
