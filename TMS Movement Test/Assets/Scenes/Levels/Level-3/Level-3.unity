@@ -219,6 +219,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157029014501979244, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 21313b62851934d71aa2a8ad68fdf240, type: 2}
+    - target: {fileID: 5157029014501979245, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
+      propertyPath: Ground.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5157029014501979247, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
       propertyPath: m_Name
       value: Player - Sprited
@@ -323,7 +335,7 @@ GameObject:
   - component: {fileID: 1411012870}
   - component: {fileID: 1411012869}
   - component: {fileID: 1411012868}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Surface
   m_Icon: {fileID: 0}
