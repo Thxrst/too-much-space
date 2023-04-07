@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
     {
         lrValue = direction;
         nextAction++;
+
         
     }
 
