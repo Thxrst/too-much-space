@@ -101,11 +101,11 @@ MonoBehaviour:
       Data3: -1922859378
       Data4: -283681943
     Path: event:/Jump
-  speed: 0
-  thrust: 15
+  speed: 4
+  thrust: 13
   Ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   lrValue: 0
   nextAction: 0
   jumpNum: 0
