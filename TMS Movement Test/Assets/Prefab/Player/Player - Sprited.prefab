@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9ff06100b524c95894a16e3f2e0b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   jumpSound:
     Guid:
       Data1: 1487398607
@@ -101,6 +102,8 @@ MonoBehaviour:
       Data3: -1922859378
       Data4: -283681943
     Path: event:/Jump
+=======
+>>>>>>> Stashed changes
   speed: 4
   thrust: 13
   Ground:
