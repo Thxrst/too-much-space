@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
     {
         lrValue = direction;
         nextAction++;
-        transform.localScale = new Vector3(direction, 1, 1);
+
         
     }
 

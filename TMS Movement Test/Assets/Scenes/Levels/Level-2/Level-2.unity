@@ -1034,10 +1034,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
-      propertyPath: thrust
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
       propertyPath: Ground.m_Bits
       value: 8
       objectReference: {fileID: 0}
