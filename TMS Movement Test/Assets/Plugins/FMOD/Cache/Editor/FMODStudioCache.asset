@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../../../../Music Production/Game SFX/FMOD Projects/Tutorial/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638166508332886305
+  lastModified: 638166532330039760
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -65,12 +65,13 @@ MonoBehaviour:
   - {fileID: 2825367086278904434}
   EditorEvents:
   - {fileID: -2723047275045961555}
+  - {fileID: 5991930717692989185}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6082835686808305886}
   StringsBanks:
   - {fileID: 6780177560327582006}
-  cacheTime: 638166508333442367
+  cacheTime: 638166532330592721
   cacheVersion: 131603
 --- !u!114 &2825367086278904434
 MonoBehaviour:
@@ -87,11 +88,38 @@ MonoBehaviour:
   Path: ../../../../Music Production/Game SFX/FMOD Projects/Tutorial/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638166508333442367
+  lastModified: 638166532330592721
   FileSizes:
   - Name: Desktop
-    Value: 4480
+    Value: 29600
   Exists: 1
+--- !u!114 &5991930717692989185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Objective
+  m_EditorClassIdentifier: 
+  Path: event:/Objective
+  Guid:
+    Data1: 268487481
+    Data2: 1116499381
+    Data3: 1309669523
+    Data4: 1815667579
+  Banks:
+  - {fileID: 2825367086278904434}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6780177560327582006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,8 +135,8 @@ MonoBehaviour:
   Path: ../../../../Music Production/Game SFX/FMOD Projects/Tutorial/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638166508332893517
+  lastModified: 638166532330045047
   FileSizes:
   - Name: Desktop
-    Value: 800
+    Value: 852
   Exists: 1
