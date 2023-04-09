@@ -1,15 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class Objective : MonoBehaviour
 {
-
-    //Audio
-    [SerializeField] private EventReference objectiveSound;
-    //Audio
-
     ParticleSystem ps;
     SpriteRenderer sr;
 
@@ -26,7 +20,7 @@ public class Objective : MonoBehaviour
             sr.enabled = false;
             ps.Play();
             //Audio
-            AudioManager.instance.PlayOneShot(objectiveSound, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.objectiveSFX, this.transform.position);
             //Audio
             Debug.Log("Objective/Player Contact");
         }
