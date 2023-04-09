@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Objective : MonoBehaviour
 {
-
-
     ParticleSystem ps;
     SpriteRenderer sr;
 
@@ -17,10 +15,13 @@ public class Objective : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && sr.enabled == true)
         {
             sr.enabled = false;
             ps.Play();
+            //Audio
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.objectiveSFX, this.transform.position);
+            //Audio
             Debug.Log("Objective/Player Contact");
         }
     }

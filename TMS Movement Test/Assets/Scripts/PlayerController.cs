@@ -1,16 +1,9 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
-    
-    //Audio
-    [SerializeField] private EventReference jumpSound;
-    //Audio
-
-
     [SerializeField] public float speed;
     [SerializeField] float thrust;
     [SerializeField] LayerMask Ground;
@@ -138,7 +131,7 @@ public class PlayerController : MonoBehaviour
         if (jumpCheck() == 1)
         {
             //Audio
-            AudioManager.instance.PlayOneShot(jumpSound, this.transform.position);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.jumpSFX, this.transform.position);
             //Audio
             rb.velocity = Vector2.zero;
             lrValue = 0;
@@ -170,6 +163,7 @@ public class PlayerController : MonoBehaviour
 
     public void death()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.deathSFX, this.transform.position);
         transform.position = startPosition;
     }
 
