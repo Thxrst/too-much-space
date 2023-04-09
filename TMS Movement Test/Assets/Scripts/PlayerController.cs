@@ -5,15 +5,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     [SerializeField] float thrust;
     [SerializeField] LayerMask Ground;
     [SerializeField] private int lrValue;
     [SerializeField] private int nextAction = 0;
     [SerializeField] private int jumpNum;
     [SerializeField] private bool hasJump = true;
+    public bool isDashing;
     private BoxCollider2D coll;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
+    private Vector3 startPosition;
 
 
     void Start()
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         nextAction = 0;
+        startPosition = transform.position;
     }
 
 
@@ -36,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDashing) return;
         hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, Ground);
         rb.velocity = new Vector2(lrValue * (100 * speed) * Time.deltaTime, rb.velocity.y);
     }
@@ -137,6 +141,11 @@ public class PlayerController : MonoBehaviour
         nextAction++;
 
         
+    }
+
+    public void death()
+    {
+        transform.position = startPosition;
     }
 
 }
