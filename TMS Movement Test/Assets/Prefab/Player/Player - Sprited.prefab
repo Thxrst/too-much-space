@@ -94,8 +94,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9ff06100b524c95894a16e3f2e0b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 4
+  jumpSound:
+    Guid:
+      Data1: 1487398607
+      Data2: 1317760122
+      Data3: -1922859378
+      Data4: -283681943
+    Path: event:/Jump
+  speed: 0
   thrust: 15
+  Ground:
+    serializedVersion: 2
+    m_Bits: 0
+  lrValue: 0
+  nextAction: 0
+  jumpNum: 0
+  hasJump: 1
+  isDashing: 0
+  rb: {fileID: 0}
 --- !u!1001 &5157029014144165969
 PrefabInstance:
   m_ObjectHideFlags: 0
