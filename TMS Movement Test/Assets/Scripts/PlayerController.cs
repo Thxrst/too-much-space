@@ -1,10 +1,16 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
     
+    //Audio
+    [SerializeField] private EventReference jumpSound;
+    //Audio
+
+
     [SerializeField] public float speed;
     [SerializeField] float thrust;
     [SerializeField] LayerMask Ground;
@@ -133,6 +139,10 @@ public class PlayerController : MonoBehaviour
     {
         if (jumpCheck() == 1)
         {
+            //Audio
+            AudioManager.instance.PlayOneShot(jumpSound, this.transform.position);
+            //Audio
+            
             lrValue = 0;
             rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             jumpNum = 0;
