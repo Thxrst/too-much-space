@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int nextAction = 0;
     [SerializeField] private int jumpNum;
     [SerializeField] private bool hasJump = true;
+    [SerializeField] private bool isWallTouch = false;
+    [SerializeField] private float maxDistance;
     public bool isDashing;
     private BoxCollider2D coll;
     public Rigidbody2D rb;
@@ -28,17 +30,24 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-       
+        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, Ground);
+        isWallTouch = Physics2D.Raycast(transform.position, new Vector2(transform.localScale.x, 0), maxDistance, Ground);
+        Debug.DrawRay(transform.position, new Vector2(transform.localScale.x, 0) * maxDistance, Color.yellow);
         //playermovementOne();
         playerMovementTwo();
+        if (isWallTouch && !hasJump)
+        {
+            jumpNum = 1;
+            hasJump = true;
+        }
+        else
+        {
+            jumpNum = 0;
+            hasJump = false;
+        }
+            
 
-        // boolcheck for grounded
 
-
-        if (isDashing) return;
-        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, Ground);
-        
-        
     }
 
     void FixedUpdate()
@@ -48,16 +57,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(lrValue * (100 * speed) * Time.deltaTime, rb.velocity.y);
     }
 
-    private int jumpCheck()
-    {
-        if (hasJump)
-        {
-            jumpNum = 1;
-            Debug.Log(jumpNum);
-        }
-            
-        return jumpNum;
-    }
+   
 
 
     void playermovementOne()
@@ -113,42 +113,52 @@ public class PlayerController : MonoBehaviour
                     jumpCheck(); //check for jumpCache only when grounded;
                     break;
                 case 1:
-                    Jump(); //jump function and leading to next action.
-                    nextAction++;
+                    Jump(2); //jump function and leading to next action.
                     break;
                 case 2:
                     Move(1); // int variable to push character to right
                     jumpCheck(); //check for jumpCache only when grounded;
                     break;
                 case 3:
-                    Jump(); // jump function leading back to 0
-                    nextAction = 0;
+                    Jump(0); // jump function leading back to 0
                     break;
             }
         }
     }
 
-    void Jump()
+    void Jump(int nxtAction)
     {
         if (jumpCheck() == 1)
         {
             //Audio
             AudioManager.instance.PlayOneShot(FMODEvents.instance.jumpSFX, this.transform.position);
             //Audio
-            
+            rb.velocity = Vector2.zero;
             lrValue = 0;
             rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
             jumpNum = 0;
             hasJump = false;
+            nextAction = nxtAction;
         }
+    }
+
+    private int jumpCheck()
+    {
+        if (hasJump)
+        {
+            jumpNum = 1;
+            Debug.Log(jumpNum);
+        }
+
+        return jumpNum;
     }
 
     void Move(int direction)
     {
         lrValue = direction;
         nextAction++;
+        transform.localScale = new Vector3(direction, 1, 1);
 
-        
     }
 
     public void death()
