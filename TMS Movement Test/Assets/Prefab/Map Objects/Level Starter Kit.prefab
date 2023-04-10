@@ -134,6 +134,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8650284227869360447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4610985274268740938}
+  m_Layer: 3
+  m_Name: Traps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4610985274268740938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650284227869360447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2269810651719724373}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3512387175158024001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +456,11 @@ TilemapCollider2D:
 --- !u!4 &861144470389616159 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7650169120045983871, guid: 9ee5a16103fe046ad904f6166845c7a4, type: 3}
+  m_PrefabInstance: {fileID: 7050871325775988320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2269810651719724373 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9126059614662257461, guid: 9ee5a16103fe046ad904f6166845c7a4, type: 3}
   m_PrefabInstance: {fileID: 7050871325775988320}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7087738277874577632
