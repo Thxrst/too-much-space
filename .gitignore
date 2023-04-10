@@ -9,7 +9,6 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
-[Uu]serSettings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -72,8 +71,9 @@ crashlytics-build.properties
 # Ignore bank files in the StreamingAssets folder.
 #/[Aa]ssets/StreamingAssets/**/*.bank
 #/[Aa]ssets/StreamingAssets/**/*.bank.meta
-.DS_Store
                     
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
 fmod_editor.log
+TMS Movement Test/.DS_Store
+TMS Movement Test/Assets/Audio/FMOD Project/Too Much Space/.DS_Store

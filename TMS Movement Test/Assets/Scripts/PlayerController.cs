@@ -1,11 +1,9 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField] public float speed;
     [SerializeField] float thrust;
     [SerializeField] LayerMask Ground;
@@ -42,6 +40,10 @@ public class PlayerController : MonoBehaviour
             jumpNum = 1;
             hasJump = true;
         }
+
+            
+
+
     }
 
     void FixedUpdate()
