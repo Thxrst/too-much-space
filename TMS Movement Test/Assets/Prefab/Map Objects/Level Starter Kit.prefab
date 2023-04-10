@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
+      propertyPath: maxDistance
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5157029014501979247, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
       propertyPath: m_Name
       value: Player - Sprited
