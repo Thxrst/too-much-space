@@ -1,7 +1,6 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class PlayerController : MonoBehaviour
 {
@@ -125,7 +124,7 @@ public class PlayerController : MonoBehaviour
         if (jumpCheck() == 1)
         {
             //Audio
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.jumpSFX, this.transform.position);
+            //AudioManager.instance.PlayOneShot(FMODEvents.instance.jumpSFX, this.transform.position);
             //Audio
             rb.velocity = Vector2.zero;
             lrValue = 0;
