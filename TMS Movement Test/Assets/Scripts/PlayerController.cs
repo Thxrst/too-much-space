@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
             hasJump = true;
         }
 
-            
 
+        Debug.Log(jumpCheck());
+         // checks if hasjump is true and returns jumpNum = 1
 
     }
 
@@ -102,21 +103,40 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            switch(nextAction)
+            
+            switch (nextAction)
             {
                 case 0:
+                    if(!isWallTouch)
+                    {
+                        jumpNum = 0;
+                    }
+                    
                     Move(-1); // int variable to push character to left
-                    jumpCheck(); //check for jumpCache only when grounded;
+                     //check for jumpCache only when grounded;
+                    Debug.Log("Move");
                     break;
                 case 1:
-                    Jump(2); //jump function and leading to next action.
+                    
+                    Jump(2);
+                    //jump function and leading to next action.
+                    Debug.Log("Jump");
                     break;
                 case 2:
+                    if (!isWallTouch)
+                    {
+                        jumpNum = 0;
+                    }
                     Move(1); // int variable to push character to right
-                    jumpCheck(); //check for jumpCache only when grounded;
+                     //check for jumpCache only when grounded;
+                    Debug.Log("Move");
                     break;
                 case 3:
-                    Jump(0); // jump function leading back to 0
+                    
+                    Jump(0);
+                    
+                    // jump function leading back to 0
+                    Debug.Log("Move");
                     break;
             }
         }
@@ -132,10 +152,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             lrValue = 0;
             rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-            jumpNum = 0;
-            hasJump = false;
+            
+
             nextAction = nxtAction;
         }
+        
     }
 
     private int jumpCheck()
@@ -162,5 +183,6 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.deathSFX, this.transform.position);
         transform.position = startPosition;
     }
+
 
 }

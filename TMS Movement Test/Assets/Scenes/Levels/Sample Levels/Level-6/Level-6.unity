@@ -2025,7 +2025,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7710258781137936389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -3.5, z: 0}
+  m_LocalPosition: {x: -5.74, y: -3.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2045,20 +2045,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be9ff06100b524c95894a16e3f2e0b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSound:
-    Guid:
-      Data1: 1487398607
-      Data2: 1317760122
-      Data3: -1922859378
-      Data4: -283681943
-    Path: event:/Jump
   speed: 4
   thrust: 13
   Ground:
     serializedVersion: 2
     m_Bits: 8
   lrValue: 0
-  nextAction: 0
+  nextAction: -1
   jumpNum: 0
   hasJump: 1
   isWallTouch: 0
