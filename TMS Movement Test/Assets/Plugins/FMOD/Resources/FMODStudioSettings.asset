@@ -561,7 +561,7 @@ MonoBehaviour:
   HasSourceProject: 0
   HasPlatforms: 0
   sourceProjectPath: Assets/Audio/FMOD Project/Too Much Space/Too Much Space.fspro
-  sourceBankPath: Assets/Audio/FMOD Project/Too Much Space/Build
+  sourceBankPath: Assets/Audio/FMOD Project/Too Much Space/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
