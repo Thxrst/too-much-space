@@ -143,7 +143,7 @@ public class PlayerController : MonoBehaviour
         if (hasJump)
         {
             jumpNum = 1;
-            Debug.Log(jumpNum);
+            //Debug.Log(jumpNum);
         }
 
         return jumpNum;
