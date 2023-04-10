@@ -558,8 +558,8 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: Assets/Audio/FMOD Project/Too Much Space/Too Much Space.fspro
   sourceBankPath: Assets/Audio/FMOD Project/Too Much Space/Build
   sourceBankPathUnformatted: 
