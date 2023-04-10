@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4275190561175038540
+--- !u!114 &-3587115824292306242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Project/Too Much Space/Build/Desktop/Master.strings.bank
+  Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638166597907314575
+  lastModified: 638166611201975022
   FileSizes:
-  - Name: Desktop
+  - Name: 
     Value: 888
   Exists: 1
 --- !u!114 &-2723047275045961555
@@ -39,7 +39,7 @@ MonoBehaviour:
     Data3: 1080817554
     Data4: -1009442387
   Banks:
-  - {fileID: -2220879164652885040}
+  - {fileID: 8505032952921983410}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -47,46 +47,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2685836564539199487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Project/Too Much Space/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638166597907308295
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &-2220879164652885040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Audio/FMOD Project/Too Much Space/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638166597907864877
-  FileSizes:
-  - Name: Desktop
-    Value: 32608
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,20 +60,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -4275190561175038540}
-  - {fileID: -2685836564539199487}
-  - {fileID: -2220879164652885040}
+  - {fileID: -3587115824292306242}
+  - {fileID: 2286586844917785992}
+  - {fileID: 8505032952921983410}
   EditorEvents:
   - {fileID: -2723047275045961555}
   - {fileID: 5991930717692989185}
   - {fileID: 8050815314078061513}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -2685836564539199487}
+  - {fileID: 2286586844917785992}
   StringsBanks:
-  - {fileID: -4275190561175038540}
-  cacheTime: 638166597907864877
+  - {fileID: -3587115824292306242}
+  cacheTime: 638166611202136740
   cacheVersion: 131603
+--- !u!114 &2286586844917785992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638166611201964642
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5991930717692989185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +111,7 @@ MonoBehaviour:
     Data3: 1618542466
     Data4: 2079857141
   Banks:
-  - {fileID: -2220879164652885040}
+  - {fileID: 8505032952921983410}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -160,7 +138,7 @@ MonoBehaviour:
     Data3: 964970417
     Data4: 51168264
   Banks:
-  - {fileID: -2220879164652885040}
+  - {fileID: 8505032952921983410}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -168,3 +146,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8505032952921983410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638166611202136740
+  FileSizes: []
+  Exists: 1

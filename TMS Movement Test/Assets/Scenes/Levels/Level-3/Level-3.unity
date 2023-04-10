@@ -289,6 +289,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
+      propertyPath: maxDistance
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157029014501979246, guid: 1825262dd0021b54a95c0cbf6172c49c, type: 3}
       propertyPath: Ground.m_Bits
       value: 8
       objectReference: {fileID: 0}
@@ -1637,18 +1641,6 @@ CompositeCollider2D:
         Y: 20000000
       - X: -70000000
         Y: -40000000
-    - - X: -20000000
-        Y: 20000000
-      - X: -20312500
-        Y: 20000000
-      - X: -25312500
-        Y: 15468750
-      - X: -25312500
-        Y: 14531250
-      - X: -20312500
-        Y: 10156250
-      - X: -20000000
-        Y: 10156250
   m_CompositePaths:
     m_Paths:
     - - {x: 8.99997, y: -5}
@@ -1729,12 +1721,6 @@ CompositeCollider2D:
       - {x: 4, y: -2.999971}
       - {x: 3.999971, y: -2.484375}
       - {x: -1, y: -2.4844043}
-    - - {x: -2.0000293, y: 1.015625}
-      - {x: -2.0000293, y: 2}
-      - {x: -2.0312574, y: 1.9999932}
-      - {x: -2.53125, y: 1.5468633}
-      - {x: -2.5312412, y: 1.4531174}
-      - {x: -2.0312402, y: 1.015625}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1411012870
