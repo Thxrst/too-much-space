@@ -40,11 +40,7 @@ public class PlayerController : MonoBehaviour
             jumpNum = 1;
             hasJump = true;
         }
-        else
-        {
-            jumpNum = 0;
-            hasJump = false;
-        }
+
             
 
 
