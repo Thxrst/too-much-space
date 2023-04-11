@@ -6,16 +6,16 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] public float speed;
     [SerializeField] float thrust;
-    [SerializeField] LayerMask Ground;
-    [SerializeField] private int lrValue;
-    [SerializeField] private int nextAction = 0;
-    [SerializeField] private int jumpNum;
-    [SerializeField] private bool hasJump = true;
+    [SerializeField] LayerMask Ground;               
+    [SerializeField] private int jumpCount;
+    [SerializeField] private bool isGrounded = true;
     [SerializeField] private bool isWallTouch = false;
     [SerializeField] private float maxDistance;
-    public bool isDashing;
+    private int lrValue;
+    private int nextAction = 0;
+    internal bool isDashing;
     private BoxCollider2D coll;
-    public Rigidbody2D rb;
+    internal Rigidbody2D rb;
     private Vector3 startPosition;
 
 
@@ -30,113 +30,41 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, Ground);
+        isGrounded = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.08f, Ground);
         isWallTouch = Physics2D.Raycast(transform.position, new Vector2(transform.localScale.x, 0), maxDistance, Ground);
         Debug.DrawRay(transform.position, new Vector2(transform.localScale.x, 0) * maxDistance, Color.yellow);
         //playermovementOne();
         playerMovementTwo();
-        if (isWallTouch && !hasJump)
+        if (isWallTouch && !isGrounded)
         {
-            jumpNum = 1;
-            hasJump = true;
+            jumpCount = 1;
         }
-
-
-        Debug.Log(jumpCheck());
-         // checks if hasjump is true and returns jumpNum = 1
-
     }
 
     void FixedUpdate()
     {
         if (isDashing) return;
-        //hasJump = Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, 0.1f, Ground);
         rb.velocity = new Vector2(lrValue * (100 * speed) * Time.deltaTime, rb.velocity.y);
     }
-
-   
-
-
-    void playermovementOne()
-    {
-        if (nextAction == 0 && Input.GetKeyDown("space"))
-        {
-            lrValue = -1;
-            nextAction++;
-            Debug.Log("left");
-        }
-
-        else if (nextAction == 2 && Input.GetKeyDown("space"))
-        {
-            lrValue = 1;
-            nextAction++;
-            Debug.Log("right");
-        }
-
-        else if (jumpCheck() == 1)
-        {
-            if (nextAction == 3 && Input.GetKeyDown("space"))
-            {
-                lrValue = 0;
-                rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-                hasJump = false;
-                jumpNum = 0;
-                nextAction = 0;
-                Debug.Log("jump2");
-            }
-
-            if (nextAction == 1 && Input.GetKeyDown("space"))
-            {
-                lrValue = 0;
-                rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-                jumpNum = 0;
-                nextAction++;
-                Debug.Log("jump1");
-            }
-        }
-    }
-
-    //Refractored the code to be in a case statement style. see if you like this? It's first step to an event system.
-    //little more robust as we can call mutilple functions / scripts in a clean manner rather than have a bunch of
-    //if statements 
     void playerMovementTwo()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            
             switch (nextAction)
             {
                 case 0:
-                    if(!isWallTouch)
-                    {
-                        jumpNum = 0;
-                    }
-                    
+                    jumpCount = 0;
                     Move(-1); // int variable to push character to left
-                     //check for jumpCache only when grounded;
-                    Debug.Log("Move");
                     break;
                 case 1:
-                    
-                    Jump(2);
-                    //jump function and leading to next action.
-                    Debug.Log("Jump");
+                    Jump(2);//jump function and leading to next action.
                     break;
                 case 2:
-                    if (!isWallTouch)
-                    {
-                        jumpNum = 0;
-                    }
+                    jumpCount = 0;
                     Move(1); // int variable to push character to right
-                     //check for jumpCache only when grounded;
-                    Debug.Log("Move");
                     break;
                 case 3:
-                    
-                    Jump(0);
-                    
-                    // jump function leading back to 0
-                    Debug.Log("Move");
+                    Jump(0); // jump function leading back to 0
                     break;
             }
         }
@@ -152,8 +80,6 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             lrValue = 0;
             rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
-            
-
             nextAction = nxtAction;
         }
         
@@ -161,13 +87,12 @@ public class PlayerController : MonoBehaviour
 
     private int jumpCheck()
     {
-        if (hasJump)
+        if (isGrounded)
         {
-            jumpNum = 1;
-            //Debug.Log(jumpNum);
+            jumpCount = 1;
         }
 
-        return jumpNum;
+        return jumpCount;
     }
 
     void Move(int direction)
@@ -175,7 +100,7 @@ public class PlayerController : MonoBehaviour
         lrValue = direction;
         nextAction++;
         transform.localScale = new Vector3(direction, 1, 1);
-
+        
     }
 
     public void death()
@@ -183,6 +108,14 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.deathSFX, this.transform.position);
         transform.position = startPosition;
     }
+
+    /*private void OnDrawGizmosSelected()
+    {
+        if (jumpCheck() == 1)
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawCube(coll.bounds.center, coll.bounds.size);
+    }
+    */
 
 
 }
