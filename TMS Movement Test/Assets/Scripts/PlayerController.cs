@@ -35,10 +35,7 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(transform.position, new Vector2(transform.localScale.x, 0) * maxDistance, Color.yellow);
         //playermovementOne();
         playerMovementTwo();
-        if (isWallTouch && !isGrounded)
-        {
-            jumpCount = 1;
-        }
+        jumpCheck();
     }
 
     void FixedUpdate()
@@ -53,15 +50,15 @@ public class PlayerController : MonoBehaviour
             switch (nextAction)
             {
                 case 0:
-                    jumpCount = 0;
-                    Move(-1); // int variable to push character to left
+                    //jumpCount = 0;
+                    Move(1); // int variable to push character to left
                     break;
                 case 1:
                     Jump(2);//jump function and leading to next action.
                     break;
                 case 2:
-                    jumpCount = 0;
-                    Move(1); // int variable to push character to right
+                    //jumpCount = 0;
+                    Move(-1); // int variable to push character to right
                     break;
                 case 3:
                     Jump(0); // jump function leading back to 0
@@ -80,6 +77,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.zero;
             lrValue = 0;
             rb.AddForce(transform.up * thrust, ForceMode2D.Impulse);
+            jumpCount--;
             nextAction = nxtAction;
         }
         
@@ -87,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private int jumpCheck()
     {
-        if (isGrounded)
+        if (isGrounded || isWallTouch)
         {
             jumpCount = 1;
         }
