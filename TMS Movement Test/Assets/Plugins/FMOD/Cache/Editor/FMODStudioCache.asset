@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638166540277092039
+  lastModified: 638166611201975022
   FileSizes:
   - Name: 
     Value: 888
@@ -72,7 +72,7 @@ MonoBehaviour:
   - {fileID: 2286586844917785992}
   StringsBanks:
   - {fileID: -3587115824292306242}
-  cacheTime: 638166540277142170
+  cacheTime: 638166611202136740
   cacheVersion: 131603
 --- !u!114 &2286586844917785992
 MonoBehaviour:
@@ -89,7 +89,7 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638166540277052409
+  lastModified: 638166611201964642
   FileSizes: []
   Exists: 1
 --- !u!114 &5991930717692989185
@@ -161,6 +161,6 @@ MonoBehaviour:
   Path: Assets/Audio/FMOD Project/Too Much Space/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638166540277142170
+  lastModified: 638166611202136740
   FileSizes: []
   Exists: 1
