@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Surface
   - Trap
+  - PickUp
+  - Explodable
   layers:
   - Default
   - TransparentFX

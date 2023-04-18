@@ -36,7 +36,7 @@ public class Objective : MonoBehaviour
             isLevelEnd = true;
             if (nextLevelIndex > PlayerPrefs.GetInt("LevelAt"))
             {
-                PlayerPrefs.SetInt("LevelAt", nextLevelIndex);
+                PlayerPrefs.SetInt("LevelAt", nextLevelIndex - 2);
             }
             StartCoroutine(nextLevelSequence());
         }
