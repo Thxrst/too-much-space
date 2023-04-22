@@ -8,6 +8,7 @@ TagManager:
   - Trap
   - PickUp
   - Explodable
+  - OnOff
   layers:
   - Default
   - TransparentFX
